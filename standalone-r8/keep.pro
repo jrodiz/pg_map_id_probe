@@ -1,0 +1,3 @@
+-keep class Hello { public static void main(java.lang.String[]); }
+-dontwarn **
+-keepattributes SourceFile,LineNumberTable

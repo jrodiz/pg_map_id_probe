@@ -1,0 +1,15 @@
+# compiler: R8
+# compiler_version: 9.1.31
+# min_api: 21
+# common_typos_disable
+# {"id":"com.android.tools.r8.mapping","version":"2.2"}
+# pg_map_id: c17d44e1f925635aeaff07986054b59425f229529b408f5dcf9170a0b83a66b9
+# pg_map_hash: SHA-256 c17d44e1f925635aeaff07986054b59425f229529b408f5dcf9170a0b83a66b9
+Hello -> Hello:
+# {"id":"sourceFile","fileName":"Hello.java"}
+    1:1:void main(java.lang.String[]):2:2 -> main
+    2:2:java.lang.String Helper.greet(int):5:5 -> main
+    2:2:void main(java.lang.String[]):2 -> main
+    3:3:void main(java.lang.String[]):2:2 -> main
+Helper -> R8$$REMOVED$$CLASS$$0:
+# {"id":"sourceFile","fileName":"Hello.java"}

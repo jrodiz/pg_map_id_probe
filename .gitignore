@@ -1,0 +1,13 @@
+# build / generated
+agp/build/
+agp/.gradle/
+agp/local.properties
+**/classes/
+standalone-r8/input.jar
+standalone-r8/out-*.jar
+# compiler jars (re-downloaded by run.sh) — too large to track
+standalone-r8/r8-*.jar
+# logs and OS cruft
+**/log-*.txt
+*.log
+.DS_Store
