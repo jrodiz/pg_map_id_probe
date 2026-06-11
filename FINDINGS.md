@@ -49,12 +49,13 @@ To confirm the standalone results reflect real AGP-driven builds, a minimal Andr
 |---|---|---|---|---|
 | 8.1.4  | 8.1.68 | 34 | 7 (prefix) | no |
 | 8.7.3  | 8.7.18 | 34 | 7 (prefix) | no |
+| 8.11.2 | 8.11.26 | 35 | 7 (prefix) | no |
 | 8.12.0 | 8.12.14 | 35 | 64 (full hash) | no |
 | 8.13.0 | 8.13.6 | 35 | 64 (full hash) | no |
 | 9.1.0  | 9.1.31 | 36 | 64 (full hash) | no |
 | 9.2.1  | 9.2.14 | 36 | 64 (full hash) | no |
 
-The real-AGP results match the standalone sweep exactly: no `r8_map_id` field in any version, and `pg_map_id` switches from a 7-character prefix to the full 64-character hash exactly at 8.12 — AGP 8.7.3 is still a 7-char prefix, while AGP 8.12.0 (the first 8.12 release, bundling R8 8.12.14) is already the full hash. AGP 9.1.0 bundles R8 9.1.31 — the same `compiler_version` observed in a real AGP 9.1 mapping header — and produced the full-hash `pg_map_id` with no `r8_map_id`.
+The real-AGP results match the standalone sweep exactly: no `r8_map_id` field in any version, and `pg_map_id` switches from a 7-character prefix to the full 64-character hash exactly at 8.12. Adjacent releases bracket it precisely: the last 8.11 (AGP 8.11.2, R8 8.11.26) is still a 7-char prefix, while the first 8.12 (AGP 8.12.0, R8 8.12.14) is already the full hash — and because the input app is identical, the 8.11.2 prefix (`bf78bf7`) is literally the first 7 characters of the full hash (`bf78bf7d9eec…`) that 8.12+ emits in full. AGP 9.1.0 bundles R8 9.1.31 — the same `compiler_version` observed in a real AGP 9.1 mapping header — and produced the full-hash `pg_map_id` with no `r8_map_id`.
 
 ## Findings
 
